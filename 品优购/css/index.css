@@ -51,12 +51,118 @@
 .news-bd ul li {
     height: 24px;
     line-height: 24px;
+    /* 超出文字部分隐藏 */
+    overflow: hidden;
+    /* 文字一行显示 */
+    white-space: nowrap;
+    /* 文字超出显示省略号 */
+    text-overflow: ellipsis;
 }
 
 .lifeservice {
+    /* 隐藏最后一个超出部分的li */
+    overflow: hidden;
     height: 209px;
+    /* background-color: purple; */
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+}
+
+/* 最后一个 li掉下来，修改ul */
+.lifeservice ul {
+    width: 252px;
+}
+
+.lifeservice ul li {
+    position: relative;
+    float: left;
+    width: 63px;
+    height: 71px;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+}
+
+.lifeservice ul li i {
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    background-color: pink;
+    margin-top: 12px;
+    /* 后面用JS */
+    background: url(../images/icons.png) no-repeat -19px -15px;
+}
+
+/* 减的制作 */
+.lifeservice .down {
+    position: absolute;
+    top: 0;
+    /* 用right会导致数量变大时，模块往左边延伸 */
+    right: 0;
+    width: 15px;
+    height: 20px;
+    /* 会继承父亲-shopcat的line-height: 35px */
+    line-height: 14px;
+    color: #fff;
+    background-color: green;
+}
+
+.lifeservice .down div {
+    position: absolute;
+    top: 7px;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+    border-width: 7.5px 7.5px 7.5px 7.5px;
 }
 
 .bargain {
     margin-top: 6px;
+}
+
+/* 推荐模块 */
+.recom {
+    height: 163px;
+    margin-top: 12px;
+    background-color: #ebebeb;
+}
+
+.recom_hd {
+    float: left;
+    width: 205px;
+    height: 163px;
+    background-color: #5c5251;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.recom_bd {
+    float: left;
+}
+
+.recom_bd ul li {
+    position: relative;
+    float: left;
+}
+
+.recom_bd ul li img {
+    width: 240px;
+    height: 163px;
+}
+
+.recom_bd ul li:nth-child(-n+3):after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 145px;
+    background-color: #ddd;
+}
+
+/* 楼层区制作，不给高度 */
+.box_hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
 }
