@@ -1,0 +1,73 @@
+/* 列表页css */
+.nav {
+    /* 由于在nav中的女装哪里设置的line-height=49px,导致行高变高，造成后面盒子显示出现交错 */
+    overflow: hidden;
+}
+
+.sk {
+    position: absolute;
+    left: 190px;
+    top: 40px;
+    border-left: 1px solid #c81523;
+    padding: 3px 0 0 14px;
+}
+
+.sk_list {
+    float: left;
+}
+
+.sk_list ul li {
+    float: left;
+}
+
+.sk_list ul li a {
+    /* a需要先转换为块级元素 */
+    display: block;
+    padding: 0 30px;
+    line-height: 47px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.sk_con {
+    float: left;
+}
+
+.sk_con ul li {
+    float: left;
+}
+
+.sk_con ul li a {
+    /* a需要先转换为块级元素 */
+    display: block;
+    padding: 0 20px;
+    line-height: 49px;
+    font-size: 14px;
+}
+
+.sk_con ul li:last-child a::after {
+    content: '\e91e';
+    font-family: 'icomoon';
+}
+
+/* 列表页主体 */
+.sk_bd ul li {
+    /* 需要自己完善盒子，现在只是放的一个照片 */
+    overflow: hidden;
+    float: left;
+    margin-right: 13px;
+    width: 290px;
+    height: 460px;
+    /* 需要保证添加边框后 li不会移动 就要让li本来就有1px的边框 */
+    border: 1px solid transparent;
+}
+
+/* 选择4的倍数的li不加右外边距 */
+.sk_bd ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.sk_bd ul li:hover {
+    border: 1px solid #c81523;
+}
